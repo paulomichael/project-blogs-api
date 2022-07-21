@@ -8,7 +8,7 @@ const Category = (sequelize, DataTypes) => {
       },
     name: DataTypes.STRING,
   }, {
-    tableName: 'Categorys',
+    tableName: 'Categories',
     timestamps: false
   });
 //   Category.associate = (models) => {
