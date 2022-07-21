@@ -13,25 +13,22 @@ const getAllUsers = async () => {
    attributes: { exclude: ['password'] },
  });
  return allUsers;
+};
 
- //  const { allUsers } = await User.findAll({
- //    attributes: ['id', 'displayName', 'email', 'image'] });
-//  const { allUsers } = await User.findAll({
-//    attributes: { exclude: ['password'] },
-//  });
-//  console.log('============> userService.getAllUsers:allUsers: ', allUsers);
-  // if (!allUsers) {
-  //   return { status: 409, message: 'No Users!!!' };
-  // }
-  // allUsers.map((user) => {
-  //   console.log(user.dataValues);
-  //   return user.dataValues;
-  // });
+const getUserById = async (userId) => {
+  const user = await User.findOne({
+    where: { id: userId },
+    attributes: { exclude: ['password'] },
+  });
 
-//  return allUsers;
+  if (!user) {
+    return { status: 404, message: 'User does not exist' };
+  }
+  return user;
 };
 
 module.exports = {
   createUser,
   getAllUsers,
+  getUserById,
 };

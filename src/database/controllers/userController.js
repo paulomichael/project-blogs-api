@@ -24,7 +24,6 @@ const createUser = async (req, res, next) => {
 const getAllUsers = async (req, res, next) => {
   try {
     const allUsers = await userService.getAllUsers();
-    // console.log('---------> userController.getAllUsers:allUsers: ', allUsers);
    if (allUsers && allUsers.status) {
      return res.status(allUsers.status).json({ message: allUsers.message });
    }
@@ -34,7 +33,21 @@ const getAllUsers = async (req, res, next) => {
 }
 };
 
+const getUserById = async (req, res, next) => {
+  try {
+    const { id: userId } = req.params;
+    const user = await userService.getUserById(userId);
+   if (user && user.status) {
+     return res.status(user.status).json({ message: user.message });
+   }
+   res.status(200).json(user);
+} catch (error) {
+  next(error);
+}
+};
+
 module.exports = {
   createUser,
   getAllUsers,
+  getUserById,
 };
