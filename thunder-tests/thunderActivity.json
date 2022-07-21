@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-07-18T19:42:28.102Z",
-    "modified": "2022-07-18T19:44:23.613Z",
+    "modified": "2022-07-21T18:37:57.326Z",
     "headers": [],
     "params": [],
     "body": {
@@ -16,6 +16,77 @@
       "raw": "{\n\"displayName\": \"Brett Wiltshire\",\n\"email\": \"brett2@email.com\",\n\"password\": \"123456\",\n\"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n} ",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "f4e597b2-65c1-4d4f-98c9-ea9a840f5ab1",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/user",
+    "url": "localhost:3000/user",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-20T19:30:02.028Z",
+    "modified": "2022-07-21T18:38:06.465Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "376fd4fc-fd0f-4505-90d1-535019766299",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/login",
+    "url": "localhost:3000/login",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T18:38:44.894Z",
+    "modified": "2022-07-21T18:43:10.570Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "email",
+        "value": "email@gmail.com",
+        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "password",
+        "value": "mypassword",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"email\": \"lewishamilton@gmail.com\",\n    \"password\": \"123456\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "780545d6-0879-4043-a282-d2b26d1642f7",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/login?email=email@gmail.com&password=mypassword",
+    "url": "localhost:3000/login?email=email@gmail.com&password=mypassword",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T18:39:26.087Z",
+    "modified": "2022-07-21T18:39:26.124Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "email",
+        "value": "email@gmail.com",
+        "isPath": false
+      },
+      {
+        "name": "password",
+        "value": "mypassword",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]

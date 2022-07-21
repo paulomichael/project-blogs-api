@@ -5,7 +5,7 @@ const userController = require('./database/controllers/userController');
 const verifyNewUserName = require('./database/middlewares/verifyNewUserName.js');
 const verifyNewUserPassword = require('./database/middlewares/verifyNewUserPassword.js');
 const verifyNewUserEmail = require('./database/middlewares/verifyNewUserEmail.js');
-// ...
+const validateJWT = require('./database/auth/validateJWT');
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.post('/user',
   verifyNewUserPassword, 
   verifyNewUserEmail, 
   userController.createUser);
-// ...
+app.get('/user', validateJWT, userController.getAllUsers);
 
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
