@@ -5,11 +5,11 @@ const createBlogPost = async ({ title, content, categoryIds }, userId) => {
 //  if (userExists) {
 //    return { status: 409, message: 'BlogPost already registered' };
 //  }
-  const blogPost = await BlogPost.create({ title, content, categoryIds });
-  console.log('-----------> postService.createBlogPost:blogPost:', blogPost);
-  console.log('-----------> postService.createBlogPost:blogPost.userId:', blogPost.userIdid);
-  // return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
-  return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
+//   const blogPost = await BlogPost.create({ title, content, categoryIds });
+//   console.log('-----------> postService.createBlogPost:blogPost:', blogPost);
+//   console.log('-----------> postService.createBlogPost:blogPost.userId:', blogPost.userIdid);
+//   // return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
+//   return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
 };
 
 // const getAllUsers = async () => {
