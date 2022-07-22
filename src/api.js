@@ -3,6 +3,7 @@ const express = require('express');
 const loginController = require('./database/controllers/loginController');
 const userController = require('./database/controllers/userController');
 const categoryController = require('./database/controllers/categoryController');
+// cont postController = require('./database/controllers/postController');
 const verifyNewUserName = require('./database/middlewares/verifyNewUserName.js');
 const verifyNewUserPassword = require('./database/middlewares/verifyNewUserPassword.js');
 const verifyNewUserEmail = require('./database/middlewares/verifyNewUserEmail.js');
@@ -22,6 +23,7 @@ app.get('/user', validateJWT, userController.getAllUsers);
 app.get('/user/:id', validateJWT, userController.getUserById);
 app.post('/categories', validateJWT, categoryController.createCategory);
 app.get('/categories', validateJWT, categoryController.getAllCategories);
+// app.post('/post', validateJWT, postController.createBlogPost);
 
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
