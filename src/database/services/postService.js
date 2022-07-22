@@ -1,6 +1,6 @@
-const { BlogPost } = require('../models');
+// const { BlogPost } = require('../models');
 
-const createBlogPost = async ({ title, content, categoryIds }, userId) => {
+// const createBlogPost = async ({ title, content, categoryIds }, userId) => {
 //  const userExists = await BlogPost.findOne({ where: { email } });
 //  if (userExists) {
 //    return { status: 409, message: 'BlogPost already registered' };
@@ -10,7 +10,7 @@ const createBlogPost = async ({ title, content, categoryIds }, userId) => {
 //   console.log('-----------> postService.createBlogPost:blogPost.userId:', blogPost.userIdid);
 //   // return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
 //   return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
-};
+// };
 
 // const getAllUsers = async () => {
 //  const allUsers = await User.findAll({
@@ -31,8 +31,8 @@ const createBlogPost = async ({ title, content, categoryIds }, userId) => {
 //   return user;
 // };
 
-module.exports = {
-  createBlogPost,
+// module.exports = {
+//   createBlogPost,
 //  getAllUsers,
 //  getUserById,
-};
+// };
