@@ -1,38 +1,25 @@
-// const { BlogPost } = require('../models');
+const Sequelize = require('sequelize');
+const { BlogPost } = require('../models');
+const categoryService = require('./categoryService');
+const config = require('../config/config');
 
-// const createBlogPost = async ({ title, content, categoryIds }, userId) => {
-//  const userExists = await BlogPost.findOne({ where: { email } });
-//  if (userExists) {
-//    return { status: 409, message: 'BlogPost already registered' };
-//  }
-//   const blogPost = await BlogPost.create({ title, content, categoryIds });
-//   console.log('-----------> postService.createBlogPost:blogPost:', blogPost);
-//   console.log('-----------> postService.createBlogPost:blogPost.userId:', blogPost.userIdid);
-//   // return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
-//   return { id: blogPost.dataValues.id, title, content, userId: blogPost.dataValues.userId };
-// };
+const sequelize = new Sequelize(config.development);
 
-// const getAllUsers = async () => {
-//  const allUsers = await User.findAll({
-//    attributes: { exclude: ['password'] },
-//  });
-//  return allUsers;
-// };
-// 
-// const getUserById = async (userId) => {
-//   const user = await User.findOne({
-//     where: { id: userId },
-//     attributes: { exclude: ['password'] },
-//   });
-// 
-//   if (!user) {
-//     return { status: 404, message: 'User does not exist' };
-//   }
-//   return user;
-// };
+const createBlogPost = async ({ title, content, categoryIds }, userId) => {
+  const transaction = await sequelize.transaction();
+  try {
+    const post = await BlogPost.create({ title, content, userId }, { transaction });
+    await categoryService.verifyCategory(categoryIds, { transaction });
+    // add postId, categoryId to PostCategories too
+    // await PostCategories.create({ postId, categoryId });
+    await transaction.commit();
+    return post.dataValues;
+} catch (error) {
+  await transaction.rollback();
+  return { status: 400, message: '"categoryIds" not found' };
+  }
+};
 
-// module.exports = {
-//   createBlogPost,
-//  getAllUsers,
-//  getUserById,
-// };
+module.exports = {
+  createBlogPost,
+};
