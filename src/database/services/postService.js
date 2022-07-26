@@ -28,7 +28,29 @@ const getAllBlogPosts = async () => {
   return allPosts;
 };
 
+const getBlogPostById = async (postId) => {
+  try {
+    const blogPost = await BlogPost.findOne({
+      where: { postId },
+      include: [
+        { model: User, as: 'user', attributes: { exclude: ['password'] } },
+        { model: Category, as: 'categories', through: { attributes: [] } },
+      ], 
+    });
+    console.log('------------> postService.getBlogPostById:blogPost:', blogPost);
+    if (!blogPost) {
+      return { status: 404, message: 'Post does not exist' };
+    } 
+    // return blogPost.dataValues;
+    console.log('----------> postService.getBlogPostById:blogPost: ', blogPost); 
+    return blogPost.dataValues;
+} catch (error) {
+  return { status: 404, message: 'Post does not exist' };
+}
+};
+
 module.exports = {
   createBlogPost,
   getAllBlogPosts,
+  getBlogPostById,
 };
