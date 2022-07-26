@@ -37,26 +37,13 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/login",
-    "url": "localhost:3000/login",
-    "method": "GET",
+    "url": "localhost:3001/login",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-07-21T18:38:44.894Z",
-    "modified": "2022-07-26T07:15:13.548Z",
+    "modified": "2022-07-26T16:44:58.277Z",
     "headers": [],
-    "params": [
-      {
-        "name": "email",
-        "value": "email@gmail.com",
-        "isDisabled": true,
-        "isPath": false
-      },
-      {
-        "name": "password",
-        "value": "mypassword",
-        "isDisabled": true,
-        "isPath": false
-      }
-    ],
+    "params": [],
     "body": {
       "type": "json",
       "raw": "{\n    \"email\": \"lewishamilton@gmail.com\",\n    \"password\": \"123456\"\n}",
@@ -87,6 +74,72 @@
         "isPath": false
       }
     ],
+    "tests": []
+  },
+  {
+    "_id": "9098abc0-a4a4-41e8-85ef-11a2882842a3",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/",
+    "url": "localhost:3001/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-26T16:43:08.144Z",
+    "modified": "2022-07-26T16:43:08.522Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d9ee2b11-ded7-48f8-b633-42eb5ec071bf",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/posts",
+    "url": "localhost:3001/posts",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-26T16:43:17.641Z",
+    "modified": "2022-07-26T16:43:17.762Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "5287a99d-2755-4402-bbc7-07cbd2048f1a",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/post",
+    "url": "localhost:3001/post",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-26T16:43:45.101Z",
+    "modified": "2022-07-26T16:45:48.952Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpYXQiOjE2NTg4NTM4OTgsImV4cCI6MTY1OTQ1ODY5OH0.Q6qU8UynEBf52OMH3eE2x45te-My-Ju8saZDPbWP1HI"
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "6e543dab-198a-4f9c-9141-b85689b17df9",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/post/1",
+    "url": "localhost:3001/post/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-26T16:46:06.469Z",
+    "modified": "2022-07-26T16:46:06.580Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20iLCJpYXQiOjE2NTg4NTM4OTgsImV4cCI6MTY1OTQ1ODY5OH0.Q6qU8UynEBf52OMH3eE2x45te-My-Ju8saZDPbWP1HI"
+      }
+    ],
+    "params": [],
     "tests": []
   }
 ]
