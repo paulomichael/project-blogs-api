@@ -17,6 +17,17 @@ const createBlogPost = async (req, res, next) => {
   }
 };
 
+const getAllBlogPosts = async (req, res, next) => {
+  try {
+    const allPosts = await postService.getAllBlogPosts();
+    console.log('---------> postController.getAllBlogPosts:allPosts: ', allPosts);
+    return res.status(200).json(allPosts);
+} catch (error) {
+  next(error);
+  }
+};
+
 module.exports = {
   createBlogPost,
+  getAllBlogPosts,
 };
